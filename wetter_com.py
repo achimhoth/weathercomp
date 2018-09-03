@@ -4,6 +4,9 @@ import requests
 import unicodedata
 import re
 from math import fmod
+import json
+import time
+from utils.request_retry import requests_retry_session
 
 def get_seven_day_detail(soup):
     seven_day_prop = []

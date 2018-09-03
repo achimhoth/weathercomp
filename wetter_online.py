@@ -4,6 +4,8 @@ import requests
 import unicodedata
 import re
 import json
+import time
+from utils.request_retry import requests_retry_session
 
 def fetch_city( url ):
     #Here's what we are looking for

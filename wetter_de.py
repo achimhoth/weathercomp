@@ -3,6 +3,9 @@ from user_agent import generate_user_agent
 import requests
 import unicodedata
 import re
+import json
+import time
+from utils.request_retry import requests_retry_session
 
 def fetch_rain_props_and_amounts( soup ):
     rain_props_up = []
