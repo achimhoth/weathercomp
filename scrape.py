@@ -1,14 +1,14 @@
 import csv
 import time
-import wetter_com
-import wetter_de
-import wetter_online
-import weather_com
-from send_mail import send_mail
+import weather_services.wetter_com
+import weather_services.wetter_de
+import weather_services.wetter_online
+import weather_services.weather_com
+from utils.send_mail import send_mail
 from urls import weather_urls
 from datetime import datetime
 from datetime import timedelta
-import mysql.connector
+#import mysql.connector
 
 def write_data_to_db( req, data ):
 
@@ -53,7 +53,7 @@ for req in weather_urls:
             data = weather_com.fetch_city(req["url"])
 
         print("Fetched successfully");
-        write_data_to_db(req, data)
+        #write_data_to_db(req, data)
         print("Saved to database")
         print("")
     except:
