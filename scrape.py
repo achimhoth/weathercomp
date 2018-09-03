@@ -53,8 +53,10 @@ for req in weather_urls:
             data = weather_com.fetch_city(req["url"])
 
         print("Fetched successfully");
+
         write_data_to_db(req, data)
         print("Saved to database")
+
         print("")
     except:
         print("Error fetching " + req["city"] + " from service " + req["service"])
