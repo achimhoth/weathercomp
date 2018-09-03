@@ -41,6 +41,8 @@ for req in weather_urls:
     service = req["service"]
 
     try:
+        print("Fetching " + req["city"] + " from service " + req["service"])
+
         if service == "wetter_com":
             data = wetter_com.fetch_city(req["url"])
         elif service == "wetter_de":
@@ -50,11 +52,13 @@ for req in weather_urls:
         elif service == "weather_com":
             data = weather_com.fetch_city(req["url"])
 
-        print("Fetched " + req["city"] + " from service " + req["service"])
+        print("Fetched successfully");
         write_data_to_db(req, data)
         print("Saved to database")
+        print("")
     except:
         print("Error fetching " + req["city"] + " from service " + req["service"])
         send_mail("Scraping Error", "Error fetching " + req["city"] + " from service " + req["service"])
+        print("")
 
     time.sleep(1)
