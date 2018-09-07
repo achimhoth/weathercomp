@@ -26,11 +26,9 @@ def fetch_city( url ):
         )
     except Exception as x:
         print('It failed :(', x.__class__.__name__)
-    else:
-        print('It eventually worked', page_response.status_code)
     finally:
         t1 = time.time()
-        print('Took', t1 - t0, 'seconds')
+        print('Fetched in ', t1 - t0, 'seconds')
 
     #Create Soup
     page_content = BeautifulSoup(page_response.content, "html.parser")
