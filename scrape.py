@@ -1,9 +1,9 @@
 import csv
 import time
-import weather_services.wetter_com
-import weather_services.wetter_de
-import weather_services.wetter_online
-import weather_services.weather_com
+import wetter_com
+import wetter_de
+import wetter_online
+import weather_com
 from utils.send_mail import send_mail
 from urls import weather_urls
 from datetime import datetime
